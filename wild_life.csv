@@ -1,0 +1,23 @@
+chip_number,kingdom,division,class,order,family,genus,species,biologist,country,sex,year,condition,needs_attention,animal_chip,id
+138778,Animalia,Chordata,Mammalia,Carnivora,Felidae,Panthera,P. leo,Jonathan Snow,Burkina Faso,M,2020,healthy,f,138778,3
+138778,Animalia,Chordata,Mammalia,Carnivora,Felidae,Panthera,P. leo,Jonathan Snow,Burkina Faso,M,2021,healthy,t,138778,4
+149652,Animalia,Chordata,Mammalia,Carnivora,Felidae,Panthera,P. leo,Johnatan Snow,Congo,F,2021,pregnant,t,149652,8
+149652,Animalia,Chordata,Mammalia,Carnivora,Felidae,Panthera,P. leo,Johnatan Snow,Congo,F,2020,healty,f,149652,7
+139625,Animalia,Chordata,Mammalia,Pilosa,Bradypodidae,Bradypus,B. variegatus,Maria Barros,Brasil,F,2021,healthy,t,139625,6
+139625,Animalia,Chordata,Mammalia,Pilosa,Bradypodidae,Bradypus,B. variegatus,Maria Barros,Brasil,F,2020,injured,t,139625,5
+127863,Animalia,Chordata,Amphibia,Caudata,Proteidae,Proteus,P. anguinus,Ivan Horvat,Croatia,F,2021,healthy,f,127863,2
+127863,Animalia,Chordata,Amphibia,Caudata,Proteidae,Proteus,P. anguinus,Ivan Horvat,Croatia,F,2020,pregnant,f,127863,1
+159426,Animalia,Chordata,Chrondrichthyes,Lamniformes,Lamnidae,Carcharodon,C. carcharias,Matt Smith,USA,M,2021,demise,f,159426,14
+159426,Animalia,Chordata,Chrondrichthyes,Lamniformes,Lamnidae,Carcharodon,C. carcharias,Matt Smith,USA,M,2020,injured,t,159426,13
+152649,Animalia,Chordata,Amphibia,Anura,Bufonidae,Bufo,B. viridis,Jan Težak,Slovenia,M,2021,demise,f,152649,10
+152649,Animalia,Chordata,Amphibia,Anura,Bufonidae,Bufo,B. viridis,Jan Težak,Slovenia,M,2020,ill,t,152649,9
+184759,Animalia,Arthropoda,Insecta,Lepidoptera,Lycaenidae,Lycaena,L. alciphron,Petar Jovanić,Serbia,M,2021,demise,f,184759,22
+184759,Animalia,Arthropoda,Insecta,Lepidoptera,Lycaenidae,Lycaena,L. alciphron,Petar Jovanić,Serbia,M,2020,healthy,f,184759,21
+163284,Animalia,Chordata,Mammaila,Diprotodontia,Phascolarctidae,Phascolarctos,P. cinereus,Harry White,Australia,F,2021,healthy,f,163284,16
+163284,Animalia,Chordata,Mammaila,Diprotodontia,Phascolarctidae,Phascolarctos,P. cinereus,Harry White,Australia,F,2020,healthy,f,163284,15
+154762,Animalia,Chordata,Mammalia,Proboscidea,Elephantidae,Elephas,E. maximus,Lars Andersson,Zimbabwe,F,2021,pregnant,f,154762,12
+154762,Animalia,Chordata,Mammalia,Proboscidea,Elephantidae,Elephas,E. maximus,Lars Andersson,Zimbabwe,F,2020,pregnant,f,154762,11
+167954,Animalia,Chordata,Reptilia,Testudines,Trionychidae,Pelochelys,P. cantorii,Hanh Gnuyen,Vietnam,M,2021,demise,f,167954,18
+167954,Animalia,Chordata,Reptilia,Testudines,Trionychidae,Pelochelys,P. cantorii,Hanh Gnuyen,Vietnam,M,2020,healthy,f,167954,17
+168349,Animalia,Chordata,Aves,Galliformes,Phasianidae,Pavo,P. cristatus,Abishek Laghari,India,M,2021,healthy,f,168349,20
+168349,Animalia,Chordata,Aves,Galliformes,Phasianidae,Pavo,P. cristatus,Abishek Laghari,India,M,2020,injures,t,168349,19

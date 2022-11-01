@@ -1,0 +1,277 @@
+[
+    {
+        "biologist": "Harry White",
+        "chip_number": 163284,
+        "class": "Mammaila",
+        "country": "Australia",
+        "division": "Chordata",
+        "family": "Phascolarctidae",
+        "genus": "Phascolarctos",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }
+        ],
+        "order": "Diprotodontia",
+        "sex": "F",
+        "species": "P. cinereus"
+    },
+    {
+        "biologist": "Johnatan Snow",
+        "chip_number": 149652,
+        "class": "Mammalia",
+        "country": "Congo",
+        "division": "Chordata",
+        "family": "Felidae",
+        "genus": "Panthera",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "pregnant",
+                "needs_attention": true,
+                "year": 2021
+            },
+            {
+                "condition": "healty",
+                "needs_attention": false,
+                "year": 2020
+            }
+        ],
+        "order": "Carnivora",
+        "sex": "F",
+        "species": "P. leo"
+    },
+    {
+        "biologist": "Matt Smith",
+        "chip_number": 159426,
+        "class": "Chrondrichthyes",
+        "country": "USA",
+        "division": "Chordata",
+        "family": "Lamnidae",
+        "genus": "Carcharodon",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "injured",
+                "needs_attention": true,
+                "year": 2020
+            }
+        ],
+        "order": "Lamniformes",
+        "sex": "M",
+        "species": "C. carcharias"
+    },
+    {
+        "biologist": "Petar Jovani\u0107",
+        "chip_number": 184759,
+        "class": "Insecta",
+        "country": "Serbia",
+        "division": "Arthropoda",
+        "family": "Lycaenidae",
+        "genus": "Lycaena",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }
+        ],
+        "order": "Lepidoptera",
+        "sex": "M",
+        "species": "L. alciphron"
+    },
+    {
+        "biologist": "Jonathan Snow",
+        "chip_number": 138778,
+        "class": "Mammalia",
+        "country": "Burkina Faso",
+        "division": "Chordata",
+        "family": "Felidae",
+        "genus": "Panthera",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": true,
+                "year": 2021
+            }
+        ],
+        "order": "Carnivora",
+        "sex": "M",
+        "species": "P. leo"
+    },
+    {
+        "biologist": "Ivan Horvat",
+        "chip_number": 127863,
+        "class": "Amphibia",
+        "country": "Croatia",
+        "division": "Chordata",
+        "family": "Proteidae",
+        "genus": "Proteus",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2020
+            }
+        ],
+        "order": "Caudata",
+        "sex": "F",
+        "species": "P. anguinus"
+    },
+    {
+        "biologist": "Lars Andersson",
+        "chip_number": 154762,
+        "class": "Mammalia",
+        "country": "Zimbabwe",
+        "division": "Chordata",
+        "family": "Elephantidae",
+        "genus": "Elephas",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2020
+            }
+        ],
+        "order": "Proboscidea",
+        "sex": "F",
+        "species": "E. maximus"
+    },
+    {
+        "biologist": "Maria Barros",
+        "chip_number": 139625,
+        "class": "Mammalia",
+        "country": "Brasil",
+        "division": "Chordata",
+        "family": "Bradypodidae",
+        "genus": "Bradypus",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "healthy",
+                "needs_attention": true,
+                "year": 2021
+            },
+            {
+                "condition": "injured",
+                "needs_attention": true,
+                "year": 2020
+            }
+        ],
+        "order": "Pilosa",
+        "sex": "F",
+        "species": "B. variegatus"
+    },
+    {
+        "biologist": "Jan Te\u017eak",
+        "chip_number": 152649,
+        "class": "Amphibia",
+        "country": "Slovenia",
+        "division": "Chordata",
+        "family": "Bufonidae",
+        "genus": "Bufo",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "ill",
+                "needs_attention": true,
+                "year": 2020
+            }
+        ],
+        "order": "Anura",
+        "sex": "M",
+        "species": "B. viridis"
+    },
+    {
+        "biologist": "Abishek Laghari",
+        "chip_number": 168349,
+        "class": "Aves",
+        "country": "India",
+        "division": "Chordata",
+        "family": "Phasianidae",
+        "genus": "Pavo",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "injures",
+                "needs_attention": true,
+                "year": 2020
+            }
+        ],
+        "order": "Galliformes",
+        "sex": "M",
+        "species": "P. cristatus"
+    },
+    {
+        "biologist": "Hanh Gnuyen",
+        "chip_number": 167954,
+        "class": "Reptilia",
+        "country": "Vietnam",
+        "division": "Chordata",
+        "family": "Trionychidae",
+        "genus": "Pelochelys",
+        "kingdom": "Animalia",
+        "observed": [
+            {
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }
+        ],
+        "order": "Testudines",
+        "sex": "M",
+        "species": "P. cantorii"
+    }
+]
