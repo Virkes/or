@@ -28,7 +28,7 @@ engleski
     - year
         - integer
         - godina promatranja
-    - conditon
+    - condition
         - varchar(20)
         - stanje promatrane životinje
     - needs_attention
