@@ -1,0 +1,952 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://or.schemas.hr/wild_life.json",
+    "type": "array",
+    "default": [],
+    "title": "Wild life",
+    "items": {
+        "type": "object",
+        "title": "Wild animal",
+        "required": [
+            "biologist",
+            "chip_number",
+            "class",
+            "country",
+            "division",
+            "family",
+            "genus",
+            "kingdom",
+            "observed",
+            "order",
+            "sex",
+            "species"
+        ],
+        "properties": {
+            "biologist": {
+                "type": "string",
+                "title": "The biologist Schema",
+                "examples": [
+                    "Harry White",
+                    "Johnatan Snow",
+                    "Matt Smith",
+                    "Petar Jovanić",
+                    "Jonathan Snow",
+                    "Ivan Horvat",
+                    "Lars Andersson",
+                    "Maria Barros",
+                    "Jan Težak",
+                    "Abishek Laghari",
+                    "Hanh Gnuyen"
+                ]
+            },
+            "chip_number": {
+                "type": "integer",
+                "title": "The chip_number Schema",
+                "examples": [
+                    163284,
+                    149652,
+                    159426,
+                    184759,
+                    138778,
+                    127863,
+                    154762,
+                    139625,
+                    152649,
+                    168349,
+                    167954
+                ]
+            },
+            "class": {
+                "type": "string",
+                "title": "The class Schema",
+                "examples": [
+                    "Mammaila",
+                    "Mammalia",
+                    "Chrondrichthyes",
+                    "Insecta",
+                    "Amphibia",
+                    "Aves",
+                    "Reptilia"
+                ]
+            },
+            "country": {
+                "type": "string",
+                "title": "The country Schema",
+                "examples": [
+                    "Australia",
+                    "Congo",
+                    "USA",
+                    "Serbia",
+                    "Burkina Faso",
+                    "Croatia",
+                    "Zimbabwe",
+                    "Brasil",
+                    "Slovenia",
+                    "India",
+                    "Vietnam"
+                ]
+            },
+            "division": {
+                "type": "string",
+                "title": "The division Schema",
+                "examples": [
+                    "Chordata",
+                    "Arthropoda"
+                ]
+            },
+            "family": {
+                "type": "string",
+                "title": "The family Schema",
+                "examples": [
+                    "Phascolarctidae",
+                    "Felidae",
+                    "Lamnidae",
+                    "Lycaenidae",
+                    "Proteidae",
+                    "Elephantidae",
+                    "Bradypodidae",
+                    "Bufonidae",
+                    "Phasianidae",
+                    "Trionychidae"
+                ]
+            },
+            "genus": {
+                "type": "string",
+                "title": "The genus Schema",
+                "examples": [
+                    "Phascolarctos",
+                    "Panthera",
+                    "Carcharodon",
+                    "Lycaena",
+                    "Proteus",
+                    "Elephas",
+                    "Bradypus",
+                    "Bufo",
+                    "Pavo",
+                    "Pelochelys"
+                ]
+            },
+            "kingdom": {
+                "type": "string",
+                "title": "The kingdom Schema",
+                "examples": [
+                    "Animalia"
+                ]
+            },
+            "observed": {
+                "type": "array",
+                "title": "The observed Schema",
+                "items": {
+                    "type": "object",
+                    "title": "A Schema",
+                    "required": [
+                        "condition",
+                        "needs_attention",
+                        "year"
+                    ],
+                    "properties": {
+                        "condition": {
+                            "type": "string",
+                            "title": "The condition Schema",
+                            "examples": [
+                                "healthy",
+                                "pregnant",
+                                "healty",
+                                "demise",
+                                "injured",
+                                "ill",
+                                "injures"
+                            ]
+                        },
+                        "needs_attention": {
+                            "type": "boolean",
+                            "title": "The needs_attention Schema",
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        },
+                        "year": {
+                            "type": "integer",
+                            "title": "The year Schema",
+                            "examples": [
+                                2021,
+                                2020
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "pregnant",
+                        "needs_attention": true,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healty",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "injured",
+                        "needs_attention": true,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": true,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "pregnant",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "pregnant",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "pregnant",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": true,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "injured",
+                        "needs_attention": true,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "ill",
+                        "needs_attention": true,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "injures",
+                        "needs_attention": true,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    }]
+                },
+                "examples": [
+                    [{
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "pregnant",
+                        "needs_attention": true,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healty",
+                        "needs_attention": false,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "injured",
+                        "needs_attention": true,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": true,
+                        "year": 2021
+                    }],
+                    [{
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "pregnant",
+                        "needs_attention": false,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "pregnant",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "pregnant",
+                        "needs_attention": false,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "healthy",
+                        "needs_attention": true,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "injured",
+                        "needs_attention": true,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "ill",
+                        "needs_attention": true,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "injures",
+                        "needs_attention": true,
+                        "year": 2020
+                    }],
+                    [{
+                        "condition": "demise",
+                        "needs_attention": false,
+                        "year": 2021
+                    },
+                    {
+                        "condition": "healthy",
+                        "needs_attention": false,
+                        "year": 2020
+                    }]
+                ]
+            },
+            "order": {
+                "type": "string",
+                "title": "The order Schema",
+                "examples": [
+                    "Diprotodontia",
+                    "Carnivora",
+                    "Lamniformes",
+                    "Lepidoptera",
+                    "Caudata",
+                    "Proboscidea",
+                    "Pilosa",
+                    "Anura",
+                    "Galliformes",
+                    "Testudines"
+                ]
+            },
+            "sex": {
+                "type": "string",
+                "title": "The sex Schema",
+                "examples": [
+                    "F",
+                    "M"
+                ]
+            },
+            "species": {
+                "type": "string",
+                "title": "The species Schema",
+                "examples": [
+                    "P. cinereus",
+                    "P. leo",
+                    "C. carcharias",
+                    "L. alciphron",
+                    "P. anguinus",
+                    "E. maximus",
+                    "B. variegatus",
+                    "B. viridis",
+                    "P. cristatus",
+                    "P. cantorii"
+                ]
+            }
+        },
+        "examples": [{
+            "biologist": "Harry White",
+            "chip_number": 163284,
+            "class": "Mammaila",
+            "country": "Australia",
+            "division": "Chordata",
+            "family": "Phascolarctidae",
+            "genus": "Phascolarctos",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Diprotodontia",
+            "sex": "F",
+            "species": "P. cinereus"
+        },
+        {
+            "biologist": "Johnatan Snow",
+            "chip_number": 149652,
+            "class": "Mammalia",
+            "country": "Congo",
+            "division": "Chordata",
+            "family": "Felidae",
+            "genus": "Panthera",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "pregnant",
+                "needs_attention": true,
+                "year": 2021
+            },
+            {
+                "condition": "healty",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Carnivora",
+            "sex": "F",
+            "species": "P. leo"
+        },
+        {
+            "biologist": "Matt Smith",
+            "chip_number": 159426,
+            "class": "Chrondrichthyes",
+            "country": "USA",
+            "division": "Chordata",
+            "family": "Lamnidae",
+            "genus": "Carcharodon",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "injured",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Lamniformes",
+            "sex": "M",
+            "species": "C. carcharias"
+        },
+        {
+            "biologist": "Petar Jovanić",
+            "chip_number": 184759,
+            "class": "Insecta",
+            "country": "Serbia",
+            "division": "Arthropoda",
+            "family": "Lycaenidae",
+            "genus": "Lycaena",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Lepidoptera",
+            "sex": "M",
+            "species": "L. alciphron"
+        },
+        {
+            "biologist": "Jonathan Snow",
+            "chip_number": 138778,
+            "class": "Mammalia",
+            "country": "Burkina Faso",
+            "division": "Chordata",
+            "family": "Felidae",
+            "genus": "Panthera",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": true,
+                "year": 2021
+            }],
+            "order": "Carnivora",
+            "sex": "M",
+            "species": "P. leo"
+        },
+        {
+            "biologist": "Ivan Horvat",
+            "chip_number": 127863,
+            "class": "Amphibia",
+            "country": "Croatia",
+            "division": "Chordata",
+            "family": "Proteidae",
+            "genus": "Proteus",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Caudata",
+            "sex": "F",
+            "species": "P. anguinus"
+        },
+        {
+            "biologist": "Lars Andersson",
+            "chip_number": 154762,
+            "class": "Mammalia",
+            "country": "Zimbabwe",
+            "division": "Chordata",
+            "family": "Elephantidae",
+            "genus": "Elephas",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Proboscidea",
+            "sex": "F",
+            "species": "E. maximus"
+        },
+        {
+            "biologist": "Maria Barros",
+            "chip_number": 139625,
+            "class": "Mammalia",
+            "country": "Brasil",
+            "division": "Chordata",
+            "family": "Bradypodidae",
+            "genus": "Bradypus",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": true,
+                "year": 2021
+            },
+            {
+                "condition": "injured",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Pilosa",
+            "sex": "F",
+            "species": "B. variegatus"
+        },
+        {
+            "biologist": "Jan Težak",
+            "chip_number": 152649,
+            "class": "Amphibia",
+            "country": "Slovenia",
+            "division": "Chordata",
+            "family": "Bufonidae",
+            "genus": "Bufo",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "ill",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Anura",
+            "sex": "M",
+            "species": "B. viridis"
+        },
+        {
+            "biologist": "Abishek Laghari",
+            "chip_number": 168349,
+            "class": "Aves",
+            "country": "India",
+            "division": "Chordata",
+            "family": "Phasianidae",
+            "genus": "Pavo",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "injures",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Galliformes",
+            "sex": "M",
+            "species": "P. cristatus"
+        },
+        {
+            "biologist": "Hanh Gnuyen",
+            "chip_number": 167954,
+            "class": "Reptilia",
+            "country": "Vietnam",
+            "division": "Chordata",
+            "family": "Trionychidae",
+            "genus": "Pelochelys",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Testudines",
+            "sex": "M",
+            "species": "P. cantorii"
+        }]
+    },
+    "examples": [
+        [{
+            "biologist": "Harry White",
+            "chip_number": 163284,
+            "class": "Mammaila",
+            "country": "Australia",
+            "division": "Chordata",
+            "family": "Phascolarctidae",
+            "genus": "Phascolarctos",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Diprotodontia",
+            "sex": "F",
+            "species": "P. cinereus"
+        },
+        {
+            "biologist": "Johnatan Snow",
+            "chip_number": 149652,
+            "class": "Mammalia",
+            "country": "Congo",
+            "division": "Chordata",
+            "family": "Felidae",
+            "genus": "Panthera",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "pregnant",
+                "needs_attention": true,
+                "year": 2021
+            },
+            {
+                "condition": "healty",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Carnivora",
+            "sex": "F",
+            "species": "P. leo"
+        },
+        {
+            "biologist": "Matt Smith",
+            "chip_number": 159426,
+            "class": "Chrondrichthyes",
+            "country": "USA",
+            "division": "Chordata",
+            "family": "Lamnidae",
+            "genus": "Carcharodon",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "injured",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Lamniformes",
+            "sex": "M",
+            "species": "C. carcharias"
+        },
+        {
+            "biologist": "Petar Jovanić",
+            "chip_number": 184759,
+            "class": "Insecta",
+            "country": "Serbia",
+            "division": "Arthropoda",
+            "family": "Lycaenidae",
+            "genus": "Lycaena",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Lepidoptera",
+            "sex": "M",
+            "species": "L. alciphron"
+        },
+        {
+            "biologist": "Jonathan Snow",
+            "chip_number": 138778,
+            "class": "Mammalia",
+            "country": "Burkina Faso",
+            "division": "Chordata",
+            "family": "Felidae",
+            "genus": "Panthera",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": true,
+                "year": 2021
+            }],
+            "order": "Carnivora",
+            "sex": "M",
+            "species": "P. leo"
+        },
+        {
+            "biologist": "Ivan Horvat",
+            "chip_number": 127863,
+            "class": "Amphibia",
+            "country": "Croatia",
+            "division": "Chordata",
+            "family": "Proteidae",
+            "genus": "Proteus",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Caudata",
+            "sex": "F",
+            "species": "P. anguinus"
+        },
+        {
+            "biologist": "Lars Andersson",
+            "chip_number": 154762,
+            "class": "Mammalia",
+            "country": "Zimbabwe",
+            "division": "Chordata",
+            "family": "Elephantidae",
+            "genus": "Elephas",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "pregnant",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Proboscidea",
+            "sex": "F",
+            "species": "E. maximus"
+        },
+        {
+            "biologist": "Maria Barros",
+            "chip_number": 139625,
+            "class": "Mammalia",
+            "country": "Brasil",
+            "division": "Chordata",
+            "family": "Bradypodidae",
+            "genus": "Bradypus",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": true,
+                "year": 2021
+            },
+            {
+                "condition": "injured",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Pilosa",
+            "sex": "F",
+            "species": "B. variegatus"
+        },
+        {
+            "biologist": "Jan Težak",
+            "chip_number": 152649,
+            "class": "Amphibia",
+            "country": "Slovenia",
+            "division": "Chordata",
+            "family": "Bufonidae",
+            "genus": "Bufo",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "ill",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Anura",
+            "sex": "M",
+            "species": "B. viridis"
+        },
+        {
+            "biologist": "Abishek Laghari",
+            "chip_number": 168349,
+            "class": "Aves",
+            "country": "India",
+            "division": "Chordata",
+            "family": "Phasianidae",
+            "genus": "Pavo",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "injures",
+                "needs_attention": true,
+                "year": 2020
+            }],
+            "order": "Galliformes",
+            "sex": "M",
+            "species": "P. cristatus"
+        },
+        {
+            "biologist": "Hanh Gnuyen",
+            "chip_number": 167954,
+            "class": "Reptilia",
+            "country": "Vietnam",
+            "division": "Chordata",
+            "family": "Trionychidae",
+            "genus": "Pelochelys",
+            "kingdom": "Animalia",
+            "observed": [{
+                "condition": "demise",
+                "needs_attention": false,
+                "year": 2021
+            },
+            {
+                "condition": "healthy",
+                "needs_attention": false,
+                "year": 2020
+            }],
+            "order": "Testudines",
+            "sex": "M",
+            "species": "P. cantorii"
+        }]
+    ]
+}

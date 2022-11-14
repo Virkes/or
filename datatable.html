@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wild life table</title>
+        <meta charset="utf-8">
+        <script language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script language="javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script language="javascript" src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+        <script language="javascript" src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.html5.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
+        <script>
+            fetch('http://127.0.0.1:5000/')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                var dataTableInstance = $("#animals").DataTable({
+                    data:data,
+                    columns:[
+                        {title:"Chip number"},
+                        {title:"Kingdom"},
+                        {title:"Division"},
+                        {title:"Class"},
+                        {title:"Order"},
+                        {title:"Family"},
+                        {title:"Genus"},
+                        {title:"Species"},
+                        {title:"Biologist"},
+                        {title:"Country"},
+                        {title:"Sex"},
+                        {title:"Year"},
+                        {title:"Condition"},
+                        {title:"Needs attention"}
+                    ],
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'csv',
+                        {
+                            text: 'JSON',
+                            action: function ( e, dt, button, config ) {
+                                var expData = dt.buttons.exportData();
+
+                                $.fn.dataTable.fileSave(
+                                    new Blob( [JSON.stringify( expData ) ] ),
+                                    'Wild_life_filtered.json'
+                                );
+                            }
+                        }
+
+                    ]
+                });
+                $('#animals tfoot th').each(function () {
+                    var title = $('#animals thead th').eq($(this).index()).text();
+                    $(this).html('<input type="text" placeholder="Search ' + title + '"/>');
+                });
+                dataTableInstance.columns().every(function () {
+                    var datatableColumn = this;
+
+                    $(this.footer()).find('input').on('keyup change', function () {
+                        datatableColumn.search(this.value).draw();
+                    });
+                });
+            })
+            .catch(error => console.log(error));
+        </script>
+    </head>
+    <body>
+        <table id="animals" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Chip number</th>
+                    <th>Kingdom</th>
+                    <th>Division</th>
+                    <th>Class</th>
+                    <th>Order</th>
+                    <th>Family</th>
+                    <th>Genus</th>
+                    <th>Species</th>
+                    <th>Biologist</th>
+                    <th>Country</th>
+                    <th>Sex</th>
+                    <th>Year</th>
+                    <th>Condition</th>
+                    <th>Needs attention</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Chip number</th>
+                    <th>Kingdom</th>
+                    <th>Division</th>
+                    <th>Class</th>
+                    <th>Order</th>
+                    <th>Family</th>
+                    <th>Genus</th>
+                    <th>Species</th>
+                    <th>Biologist</th>
+                    <th>Country</th>
+                    <th>Sex</th>
+                    <th>Year</th>
+                    <th>Condition</th>
+                    <th>Needs attention</th>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

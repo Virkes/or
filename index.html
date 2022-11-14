@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wild life</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Wild life display">
+        <meta name="keywords" content="CSV, JSON, html">
+        <meta name="author" content="Katarina Virkes">
+    </head>
+    <body>
+        <h1 style="background-color:mediumpurple;">OR-Laboratorijska vježba 2</h1>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li style="float:right"><a href="./datatable.html">Table</a></li>
+        </ul>
+        <h2 style="color:mediumpurple;">Licencija</h2>
+        <p>CC0 1.0 Universal -No Copyright</p>
+        <hr/>
+        <h2 style="color:mediumpurple;">Autor</h2>
+        <p>Katarina Virkes</p>
+        <hr/>
+        <h2 style="color:mediumpurple;">Verzija skupa</h2>
+        <p>1.0</p>
+        <hr/>
+        <h2 style="color:mediumpurple;">Jezik</h2>
+        <p>engleski</p>
+        <hr/>
+        <h2 style="color:mediumpurple;">Atributi</h2>
+        <ul>
+            <li>chip_number</li>
+            <ul>
+                <li>integer</li>
+                <li>jedinstveni broj čipa životinje</li>
+            </ul>
+            <li>kingdom, division, class, order, family, genus, species</li>
+            <ul>
+                <li>varchar(20)</li>
+                <li>klasifikacija životinje</li>
+            </ul>
+            <li>biologist</li>
+            <ul>
+                <li>varchar(30)</li>
+                <li>biolog odgovoran za promatranje životinje</li>
+            </ul>
+            <li>country</li>
+            <ul>
+                <li>varchar(20)</li>
+                <li>zemlja stanište životinje</li>
+            </ul>
+            <li>sex</li>
+            <ul>
+                <li>character(1)</li>
+                <li>spol životinje</li>
+            </ul>
+            <li>observing</li>
+            <ul>
+                <li>year</li>
+                <ul>
+                    <li>integer</li>
+                    <li>godina promatranja</li>
+                </ul>
+                <li>condition</li>
+                <ul>
+                    <li>varchar(20)</li>
+                    <li>stanje promatrane životinje</li>
+                </ul>
+                <li>needs_attention</li>
+                <ul>
+                    <li>boolean</li>
+                    <li>treba li životinja medicinsku pomoć</li>
+                </ul>
+            </ul>
+        </ul>
+        <hr/>
+        <h2 style="color:mediumpurple;">Formati</h2>
+        <ul>
+            <li>CSV</li>
+            <li>JSON</li>
+        </ul>
+        <hr/>
+        <li>zadnji datum izmjene 13.11.2022.</li>
+        <hr/>
+        <div>
+            <a href="wild_life.csv">Download CSV file</a>
+        </div>
+        <div>
+            <a href="wild_life.json">Download JSON file</a>
+        </div>
+    </body>
+</html>
