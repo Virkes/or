@@ -1,0 +1,111 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Wild Life API",
+        "version": "2.0",
+        "contact": {
+            "name": "OR Support",
+            "email": "support@or.hr"
+        },
+        "license": {
+            "name": "CC0 1.0 Universal -No Copyright"
+        }
+    },
+    "paths": {
+        "/wild-life": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/wild-life/{chip_number}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "404": {
+                        "description": "Wild life not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "404": {
+                        "description": "Wild life not found"
+                    }
+                }
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "404": {
+                        "description": "Wild life not found"
+                    }
+                }
+            }
+        },
+        "/animals": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/observings": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/wild-life/needs-attention": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/new-wild-life": {
+            "post": {
+                "responses": {
+                    "201": {
+                        "description": "Wild life created"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }
+        }
+    }
+}
