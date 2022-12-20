@@ -1,9 +1,10 @@
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request, make_response, send_file
 from flask_cors import CORS
 from dotenv import load_dotenv
 import psycopg2
 import os
-from exceptions import NotFoundException, BadRequestException
+from exceptions import NotFoundException
+import os.path
 
 load_dotenv()
 
@@ -390,6 +391,10 @@ def create_wild_life():
         }
         return make_response(jsonify(result_dict), 400)
 
+@app.route('/openapi')
+def get_openapi():
+    f = os.path.join(os.path.dirname(__file__), os.pardir, 'openapi.json')
+    return send_file(f, as_attachment=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
