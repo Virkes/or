@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Wild life application</title>
+  </head>
+  <body>
+    {% if session %}
+    <h1>Welcome {{session.userinfo.name}}</h1>
+    <li><a href="/refresh">Osvježi preslike</a></li>
+    <li><a href="/profile">Korisnički profil</a></li>
+    <li><a href="/logout" id="qsLogoutBtn">Odjava</a></li>
+    {% else %}
+    <h1 id="profileDropDown">Welcome Guest</h1>
+    <p><a href="/login" id="qsLoginBtn">Prijava</a></p>
+    {% endif %}
+  </body>
+</html>

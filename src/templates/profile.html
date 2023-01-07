@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>User profile</title>
+  </head>
+  <body>
+    <h1 style="color:mediumpurple;">Your profile {{session.userinfo.name}}</h1>
+    <h2 style="color:mediumpurple;">Your nickname: {{session.userinfo.nickname}}</h2>
+    <h2 style="color:mediumpurple;">Your e-mail: {{session.userinfo.email}}</h2>
+    <img src="{{ session.userinfo.picture }}">
+    <p>Last updated: {{session.userinfo.updated_at}}</p>
+  </body>
+</html>

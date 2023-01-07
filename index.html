@@ -12,6 +12,9 @@
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li style="float:right"><a href="./datatable.html">Table</a></li>
+            <p id="log">
+
+            </p>
         </ul>
         <h2 style="color:mediumpurple;">Licencija</h2>
         <p>CC0 1.0 Universal -No Copyright</p>
@@ -86,5 +89,23 @@
         <div>
             <a href="wild_life.json">Download JSON file</a>
         </div>
+        <!-- <script>
+            fetch('http://localhost:5000/user')
+            .then(response => { return response.json();})
+            .then(responseData => {console.log(responseData); return responseData;})
+            .then(data => {
+                let user = data;
+                console.log(user);
+                if (data == null) {
+                    document.getElementById("log").innerHTML += '<li><a href="http://localhost:5000/login">Login</a></li>'
+                }
+                else {
+                    document.getElementById("log").innerHTML += '<li><a href="./profil.html">Profil</a></li>'
+                    document.getElementById("log").innerHTML += '<li><a href="http://localhost:5000/refresh">Refresh</a></li>'
+                    document.getElementById("log").innerHTML += '<li><a href="http://localhost:5000/logout">Logout</a></li>'
+                }
+            })
+            .catch(error => console.log(error));
+        </script> -->
     </body>
 </html>

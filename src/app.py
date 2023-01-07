@@ -1,10 +1,13 @@
-from flask import Flask, jsonify, request, make_response, send_file
+from flask import Flask, jsonify, request, make_response, send_file, session, redirect, url_for, render_template
 from flask_cors import CORS
 from dotenv import load_dotenv
 import psycopg2
 import os
+import json
 from exceptions import NotFoundException
 import os.path
+from authlib.integrations.flask_client import OAuth
+from urllib.parse import quote_plus, urlencode
 
 load_dotenv()
 
@@ -16,12 +19,28 @@ conn = psycopg2.connect(database="OR",
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
+app.secret_key = os.environ.get("APP_SECRET_KEY")
+
 
 conn.autocommit = True
 cursor = conn.cursor()
 
-@app.route('/')
+
+oauth = OAuth(app)
+
+oauth.register(
+    "auth0",
+    client_id=os.environ.get("AUTH0_CLIENT_ID"),
+    client_secret=os.environ.get("AUTH0_CLIENT_SECRET"),
+    client_kwargs={
+        "scope": "openid profile email",
+    },
+    server_metadata_url=f'https://{os.environ.get("AUTH0_DOMAIN")}/.well-known/openid-configuration',
+)
+
+
+@app.route('/datatable')
 def datatable():
     sql = '''
     SELECT *
@@ -32,6 +51,72 @@ def datatable():
     cursor.execute(sql)
     result = cursor.fetchall()
     return jsonify(result)
+
+
+@app.route('/')
+def home():
+    return render_template(
+        "home.html",
+        session=session.get("user"),
+    )
+
+
+@app.route("/callback", methods=["GET", "POST"])
+def callback():
+    token = oauth.auth0.authorize_access_token()
+    session["user"] = token
+    return redirect(url_for("home"))
+
+
+@app.route("/login")
+def login():
+    return oauth.auth0.authorize_redirect(
+        redirect_uri=url_for("callback", _external=True)
+    )
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(
+        "https://"
+        + os.environ.get("AUTH0_DOMAIN")
+        + "/v2/logout?"
+        + urlencode(
+            {
+                "returnTo": url_for("home", _external=True),
+                "client_id": os.environ.get("AUTH0_CLIENT_ID"),
+            },
+            quote_via=quote_plus,
+        )
+    )
+
+
+@app.route("/profile")
+def profile():
+    user = session.get("user")
+    if user:
+        return render_template(
+            "profile.html",
+            session=user,
+            pretty=json.dumps(session.get("user"), indent=4),
+        )
+    result_dict = {
+            "status": "Forbidden error",
+            "message": "You must be signed in to excess this page",
+            "response": "",
+        }
+    return make_response(jsonify(result_dict), 403)
+
+
+@app.route("/refresh")
+def refresh():
+    user = session.get("user")
+    if user:
+        os.system(r"python C:\Users\Lenovo\Desktop\OR\to_csv.py")
+        os.system(r"python C:\Users\Lenovo\Desktop\OR\to_json.py")
+        return make_response(jsonify(""))
+
 
 
 @app.route('/wild-life')
@@ -59,6 +144,14 @@ def get_all_wild_life():
         cursor.execute(sql)
         result = cursor.fetchall()
         wild_life = []
+        json_ld = {
+            "@context": {
+                "@vocab": "https://schema.org/",
+                "country": "Country",
+                "year": "Number"
+            }
+        }
+        wild_life.append(json_ld)
         for row in result:
             wild_life.extend(row)
         result_dict = {
@@ -98,31 +191,40 @@ def get_wild_life(chip_number):
     GROUP BY w.chip_number)
     as r
     '''
-    try:
-        cursor.execute(sql)
-        result = cursor.fetchone()
-        if result:
-            result_dict = {
-                    "status": "OK",
-                    "message": "Fetched one wild life",
-                    "response": result[0]
-                }
-            return make_response(jsonify(result_dict), 200)
-        raise NotFoundException
-    except NotFoundException:
-        result_dict = {
-        "status": "Not Found",
-        "message": "Wild life with the provided chip number does not exist",
-        "response": "",
+    #try:
+    cursor.execute(sql)
+    result = cursor.fetchone()
+    json_ld = {
+        "@context": {
+            "@vocab": "https://schema.org/",
+            "country": "Country",
+            "year": "Number"
         }
-        return make_response(jsonify(result_dict), 404)
-    except Exception:
+    }
+    wild_life = [json_ld]
+    wild_life.append(result[0])
+    if result:
         result_dict = {
-            "status": "Error",
-            "message": "Server error",
-            "response": "",
-        }
-        return make_response(jsonify(result_dict), 500)
+                "status": "OK",
+                "message": "Fetched one wild life",
+                "response": wild_life
+            }
+        return make_response(jsonify(result_dict), 200)
+    #     raise NotFoundException
+    # except NotFoundException:
+    #     result_dict = {
+    #     "status": "Not Found",
+    #     "message": "Wild life with the provided chip number does not exist",
+    #     "response": "",
+    #     }
+    #     return make_response(jsonify(result_dict), 404)
+    # except Exception:
+    #     result_dict = {
+    #         "status": "Error",
+    #         "message": "Server error",
+    #         "response": "",
+    #     }
+    #     return make_response(jsonify(result_dict), 500)
 
 @app.route('/wild-life/<int:chip_number>', methods=['PUT'])
 def update_wild_life(chip_number):
@@ -149,7 +251,7 @@ def update_wild_life(chip_number):
             sql = f'''
             UPDATE wild_life
             SET sex = '{request_data["sex"]}'
-            WHERE chip_number = {request_data["chip_number"]}
+            WHERE chip_number = {chip_number}
             '''
             cursor.execute(sql)
 
@@ -157,7 +259,7 @@ def update_wild_life(chip_number):
             sql = f'''
             UPDATE wild_life
             SET biologist = '{request_data["biologist"]}'
-            WHERE chip_number = {request_data["chip_number"]}
+            WHERE chip_number = {chip_number}
             '''
             cursor.execute(sql)
 
@@ -165,7 +267,7 @@ def update_wild_life(chip_number):
             sql = f'''
             UPDATE wild_life
             SET country = '{request_data["country"]}'
-            WHERE chip_number = {request_data["chip_number"]}
+            WHERE chip_number = {chip_number}
             '''
             cursor.execute(sql)
 
@@ -188,26 +290,26 @@ def update_wild_life(chip_number):
 
 @app.route('/wild-life/<int:chip_number>', methods=['DELETE'])
 def delete_wild_life(chip_number):
-    try:
-        sql = f'''
-        DELETE FROM wild_life
-        WHERE chip_number = {chip_number}
-        '''
-        cursor.execute(sql)
-        conn.commit()
-        result_dict = {
-            "status": "Deleted",
-            "message": "Wild life deleted",
-            "response": "",
-        }
-        return make_response(jsonify(result_dict), 200)
-    except Exception:
-        result_dict = {
-        "status": "Not Found",
-        "message": "Wild life with the provided chip number does not exist",
+    #try:
+    sql = f'''
+    DELETE FROM wild_life
+    WHERE chip_number = {chip_number}
+    '''
+    cursor.execute(sql)
+    conn.commit()
+    result_dict = {
+        "status": "Deleted",
+        "message": "Wild life deleted",
         "response": "",
-        }
-        return make_response(jsonify(result_dict), 404)
+    }
+    return make_response(jsonify(result_dict), 200)
+    # except Exception:
+    #     result_dict = {
+    #     "status": "Not Found",
+    #     "message": "Wild life with the provided chip number does not exist",
+    #     "response": "",
+    #     }
+    #     return make_response(jsonify(result_dict), 404)
 
 
 @app.route('/animals')
@@ -228,6 +330,14 @@ def get_all_animals():
         cursor.execute(sql)
         result = cursor.fetchall()
         animals = []
+        json_ld = {
+            "@context": {
+                "@vocab": "https://schema.org/",
+                "country": "Country",
+                "biologist": "Person"
+            }
+        }
+        animals.append(json_ld)
         for row in result:
             animals.append(row)
         result_dict = {
@@ -259,6 +369,14 @@ def get_all_observings():
         cursor.execute(sql)
         result = cursor.fetchall()
         observings = []
+        json_ld = {
+            "@context": {
+                "@vocab": "https://schema.org/",
+                "year": "Number",
+                "condition": "MedicalCondition"
+            }
+        }
+        observings.append(json_ld)
         for row in result:
             observings.extend(row)
         result_dict = {
@@ -302,6 +420,14 @@ def get_all_wild_life_that_needs_help():
         cursor.execute(sql)
         result = cursor.fetchall()
         wild_life = []
+        json_ld = {
+            "@context": {
+                "@vocab": "https://schema.org/",
+                "country": "Country",
+                "year": "Number"
+            }
+        }
+        wild_life.append(json_ld)
         for row in result:
             wild_life.extend(row)
         result_dict = {

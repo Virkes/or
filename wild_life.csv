@@ -21,3 +21,8 @@ chip_number,kingdom,division,class,order,family,genus,species,biologist,country,
 167954,Animalia,Chordata,Reptilia,Testudines,Trionychidae,Pelochelys,P. cantorii,Hanh Gnuyen,Vietnam,M,2020,healthy,f,167954,17
 168349,Animalia,Chordata,Aves,Galliformes,Phasianidae,Pavo,P. cristatus,Abishek Laghari,India,M,2021,healthy,f,168349,20
 168349,Animalia,Chordata,Aves,Galliformes,Phasianidae,Pavo,P. cristatus,Abishek Laghari,India,M,2020,injures,t,168349,19
+134218,test,test,test,test,test,test,test,,,f,2022,test,,134218,23
+134219,test,test,test,test,test,test,test,,,f,2022,test,,134219,24
+134220,test,test,test,test,test,test,test,,,f,2022,test,f,134220,25
+134221,fer,test,test,test,test,test,test,,,m,2022,test,f,134221,26
+134224,fer,test,test,test,test,test,test,Ivana Bosnić,,m,2022,test,f,134224,27
